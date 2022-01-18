@@ -3,28 +3,24 @@ import './LoginForm.css'
 import { useState } from 'react'
 
 function LoginForm(props) {
-	// const [username, setUsername] = useState('')
-	// const [email, setEmail] = useState('')
-	// const [password, SetPassword] = useState('')
+	const [userInfo, setUserInfo] = useState({
+		username: '',
+		email: '',
+		password: '',
+	})
 
-	// const onChangeUsernameHandler = (e) => {
-	// 	setUsername(e.target.value)
-	// }
-	// const onChangeEmailHandler = (e) => {
-	// 	setEmail(e.target.value)
-	// }
-	// const onChangePasswordHandler = (e) => {
-	// 	SetPassword(e.target.value)
-	// }
-	// const onLoginHandler = (e) => {
-	// 	e.preventDefault()
-    //     const showData = {
-	// 		username:username,
-    //         email:email,
-    //         password:password
-	// 	}
-    //     console.log(showData)
-	// }
+	const onChangeUserInfoHandler = (e) => {
+		const currentData = e.target.name
+		setUserInfo({
+			...userInfo,
+			[currentData]: e.target.value,
+		})
+	}
+
+	const onLoginHandler = (e) => {
+		e.preventDefault()
+		console.log(userInfo)
+	}
 
 	return (
 		<form className='Form' onSubmit={onLoginHandler}>
@@ -36,8 +32,9 @@ function LoginForm(props) {
 				type='text'
 				placeholder='Username or Nickname'
 				id='username'
-				value={username}
-				onChange={onChangeUsernameHandler}
+				name='username'
+				value={userInfo.username}
+				onChange={onChangeUserInfoHandler}
 			/>
 
 			<label className='Label'>User Email</label>
@@ -46,8 +43,9 @@ function LoginForm(props) {
 				type='text'
 				placeholder='Email or Phone'
 				id='userEmail'
-				value={email}
-				onChange={onChangeEmailHandler}
+				value={userInfo.email}
+				name='email'
+				onChange={onChangeUserInfoHandler}
 			/>
 
 			<label className='Label'>Password</label>
@@ -56,8 +54,9 @@ function LoginForm(props) {
 				type='password'
 				placeholder='Password'
 				id='password'
-				value={password}
-				onChange={onChangePasswordHandler}
+				value={userInfo.password}
+				name='password'
+				onChange={onChangeUserInfoHandler}
 			/>
 
 			<button type='sumbit' className='Login__button'>

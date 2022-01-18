@@ -11,9 +11,11 @@ function LoginForm(props) {
 
 	const onChangeUserInfoHandler = (e) => {
 		const currentData = e.target.name
-		setUserInfo({
-			...userInfo,
-			[currentData]: e.target.value,
+		setUserInfo((prevState) => {
+			return {
+				...prevState,
+				[currentData]: e.target.value,
+			}
 		})
 	}
 

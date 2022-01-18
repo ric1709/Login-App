@@ -3,28 +3,28 @@ import './LoginForm.css'
 import { useState } from 'react'
 
 function LoginForm(props) {
-	const [username, setUsername] = useState('')
-	const [email, setEmail] = useState('')
-	const [password, SetPassword] = useState('')
+	// const [username, setUsername] = useState('')
+	// const [email, setEmail] = useState('')
+	// const [password, SetPassword] = useState('')
 
-	const onChangeUsernameHandler = (e) => {
-		setUsername(e.target.value)
-	}
-	const onChangeEmailHandler = (e) => {
-		setEmail(e.target.value)
-	}
-	const onChangePasswordHandler = (e) => {
-		SetPassword(e.target.value)
-	}
-	const onLoginHandler = (e) => {
-		e.preventDefault()
-        const showData = {
-			username:username,
-            email:email,
-            password:password
-		}
-        console.log(showData)
-	}
+	// const onChangeUsernameHandler = (e) => {
+	// 	setUsername(e.target.value)
+	// }
+	// const onChangeEmailHandler = (e) => {
+	// 	setEmail(e.target.value)
+	// }
+	// const onChangePasswordHandler = (e) => {
+	// 	SetPassword(e.target.value)
+	// }
+	// const onLoginHandler = (e) => {
+	// 	e.preventDefault()
+    //     const showData = {
+	// 		username:username,
+    //         email:email,
+    //         password:password
+	// 	}
+    //     console.log(showData)
+	// }
 
 	return (
 		<form className='Form' onSubmit={onLoginHandler}>
